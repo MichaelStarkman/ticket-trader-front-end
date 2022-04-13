@@ -1,4 +1,6 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
+// import { useEffect } from "react"
+import SingleTicketComp from "../classyTicketsContainer/singleTicketComp/singleTicketComp"
 
 const TicketsContainer = () => {
     const [tickets, setTickets] = useState([])
@@ -11,7 +13,12 @@ const TicketsContainer = () => {
         <div>
             <h2>Tickets Container</h2>
             <button onClick={getTickets}>Get Tickets</button>
-            <p>The tickets are: {JSON.stringify(tickets)}</p>
+            {tickets.map((ticket)=>{
+                return <SingleTicketComp
+                ticket={ticket} 
+                key={`ticket-${ticket.id}`}
+                ></SingleTicketComp>
+            })}
         </div>
     )
 }
