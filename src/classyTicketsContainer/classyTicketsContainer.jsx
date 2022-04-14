@@ -33,7 +33,7 @@ class ClassyTicketsContainer extends React.Component {
     }
     createNewTicket = async (e) => {
         e.preventDefault();
-        const apiResponse = await fetch("https://ancient-woodland-14399.herokuapp.com/", {
+        const apiResponse = await fetch("https://ancient-woodland-14399.herokuapp.com/api/tickets/", {
             method: "POST",
             body: JSON.stringify(this.state.newTicket),
             headers: {
@@ -48,14 +48,14 @@ class ClassyTicketsContainer extends React.Component {
         }
     }
     async getTickets(){
-        const getTicketsApiResponse = await fetch("https://ancient-woodland-14399.herokuapp.com/")
+        const getTicketsApiResponse = await fetch("https://ancient-woodland-14399.herokuapp.com/api/tickets/")
         const parsedTickets = await getTicketsApiResponse.json();
         this.setState({
             contacts: parsedTickets
         })
     }
     deleteTicket = async (idToDelete) => {
-        const deleteResponse = await fetch(`https://ancient-woodland-14399.herokuapp.com/${idToDelete}`, {
+        const deleteResponse = await fetch(`https://ancient-woodland-14399.herokuapp.com/api/tickets/${idToDelete}`, {
             method: "DELETE",
         })
         console.log(deleteResponse.status)
@@ -75,7 +75,7 @@ class ClassyTicketsContainer extends React.Component {
         })
     }
     updateTicket = async (idToUpdate) => {
-        const apiResponse = await fetch(`https://ancient-woodland-14399.herokuapp.com/${idToUpdate}`, {
+        const apiResponse = await fetch(`https://ancient-woodland-14399.herokuapp.com/api/tickets/${idToUpdate}`, {
             method: "PUT",
             body: JSON.stringify(this.state.updateTicket),
             headers: {
