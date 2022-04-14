@@ -51,7 +51,7 @@ class ClassyTicketsContainer extends React.Component {
         const getTicketsApiResponse = await fetch("https://ancient-woodland-14399.herokuapp.com/api/tickets/")
         const parsedTickets = await getTicketsApiResponse.json();
         this.setState({
-            contacts: parsedTickets
+            tickets: parsedTickets
         })
     }
     deleteTicket = async (idToDelete) => {
