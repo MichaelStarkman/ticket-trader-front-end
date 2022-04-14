@@ -5,7 +5,7 @@ import SingleTicketComp from "../classyTicketsContainer/singleTicketComp/singleT
 const TicketsContainer = () => {
     const [tickets, setTickets] = useState([])
     const getTickets = async () => {
-        const getTicketsApiResponse = await fetch("http://localhost:8000/api/tickets/")
+        const getTicketsApiResponse = await fetch("https://ancient-woodland-14399.herokuapp.com/")
         const parsedTickets = await getTicketsApiResponse.json();
         setTickets(parsedTickets);
     }
