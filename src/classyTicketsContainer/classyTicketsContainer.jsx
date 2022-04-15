@@ -1,6 +1,7 @@
 import React from "react";
 import SingleTicketComp from "./singleTicketComp/singleTicketComp";
 import NewTicketComp from "./newTicketComp/newTicketComp";
+import apiUrl from "../apiConfig";
 
 class ClassyTicketsContainer extends React.Component {
     constructor(){
@@ -33,7 +34,7 @@ class ClassyTicketsContainer extends React.Component {
     }
     createNewTicket = async (e) => {
         e.preventDefault();
-        const apiResponse = await fetch("https://ancient-woodland-14399.herokuapp.com/api/tickets/", {
+        const apiResponse = await fetch(`${apiUrl}/https://ancient-woodland-14399.herokuapp.com/api/tickets/`, {
             method: "POST",
             body: JSON.stringify(this.state.newTicket),
             headers: {
@@ -48,14 +49,14 @@ class ClassyTicketsContainer extends React.Component {
         }
     }
     async getTickets(){
-        const getTicketsApiResponse = await fetch("https://ancient-woodland-14399.herokuapp.com/api/tickets/")
+        const getTicketsApiResponse = await fetch(`${apiUrl}/https://ancient-woodland-14399.herokuapp.com/api/tickets/`)
         const parsedTickets = await getTicketsApiResponse.json();
         this.setState({
             tickets: parsedTickets
         })
     }
     deleteTicket = async (idToDelete) => {
-        const deleteResponse = await fetch(`https://ancient-woodland-14399.herokuapp.com/api/tickets/${idToDelete}`, {
+        const deleteResponse = await fetch(`${apiUrl}/https://ancient-woodland-14399.herokuapp.com/api/tickets/${idToDelete}`, {
             method: "DELETE",
         })
         console.log(deleteResponse.status)
@@ -75,7 +76,7 @@ class ClassyTicketsContainer extends React.Component {
         })
     }
     updateTicket = async (idToUpdate) => {
-        const apiResponse = await fetch(`https://ancient-woodland-14399.herokuapp.com/api/tickets/${idToUpdate}`, {
+        const apiResponse = await fetch(`${apiUrl}/https://ancient-woodland-14399.herokuapp.com/api/tickets/${idToUpdate}`, {
             method: "PUT",
             body: JSON.stringify(this.state.updateTicket),
             headers: {
@@ -116,4 +117,3 @@ class ClassyTicketsContainer extends React.Component {
 }
 export default ClassyTicketsContainer
 
-// change in order to push
