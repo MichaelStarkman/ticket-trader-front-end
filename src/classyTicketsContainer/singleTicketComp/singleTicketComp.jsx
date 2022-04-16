@@ -7,11 +7,12 @@ const SingleTicketComp = (props) => {
             <h4>Venue: {props.ticket.venue}</h4>
             <h4>Date: {props.ticket.event_date}</h4>
             <h4>${props.ticket.price}</h4>
-            <h4>{props.ticket.img}</h4>
+            {/* <h4>{props.ticket.img}</h4> */}
             <button onClick={()=>{props.deleteTicket(props.ticket.id)}}>DELETE TICKET</button>
             <UpdateTicketComp
             ticket={props.ticket}
             handleUpdateTicketInputChange={props.handleUpdateTicketInputChange}
+            updateTicketFunction={props.updateTicketFunction}
             updateTicket={props.updateTicket}
             ></UpdateTicketComp>
         </div>

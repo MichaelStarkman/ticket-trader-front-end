@@ -4,6 +4,15 @@ import Button from 'react-bootstrap/Button'
 
 const UpdateTicketComp = (props) => {
     const [show, setShow] = useState(false);
+    // const [updateTicketInfo, setUpdateTicketInfo] = useState({
+    //     name: props.ticket.name,
+    //     venue: props.ticket.venue,
+    //     event_date: props.ticket.event_date,
+    //     price: props.ticket.price,
+    //     _id: props.ticket._id 
+
+    // })
+    
     return (
         <>
          <Button variant="primary" onClick={() => setShow(true)}>
@@ -19,14 +28,14 @@ const UpdateTicketComp = (props) => {
                 <Modal.Title id="example-custom-modal-styling-title">Update Ticket</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <form onSubmit={props.updateTicket(props.ticket.id)}>
-                    Name: <input onChange={props.handleNewTicketInputChange} type="text" name="name"/>
+                <form onSubmit={()=>props.updateTicketFunction(props.ticket.id)}>
+                    Name: <input onChange={props.handleUpdateTicketInputChange} type="text" name="name" placeholder={props.ticket.name}/>
                     <br />
-                    Venue: <input onChange={props.handleNewTicketInputChange} type="text" name="venue"/>
+                    Venue: <input onChange={props.handleUpdateTicketInputChange} type="text" name="venue" placeholder={props.ticket.venue}/>
                     <br />
-                    Date:   <input onChange={props.handleNewTicketInputChange} type="date" name="event_date"/>
+                    Date:   <input onChange={props.handleUpdateTicketInputChange} type="date" name="event_date" placeholder={props.ticket.event_date}/>
                     <br />
-                    Price: $<input onChange={props.handleNewTicketInputChange} type="number" name="price"/>
+                    Price: $<input onChange={props.handleUpdateTicketInputChange} type="number" name="price" placeholder={props.ticket.price}/>
                     <br />
                     {/* Image: <input onChange={props.handleNewTicketInputChange} type="text" name="img" /> */}
                     <br />

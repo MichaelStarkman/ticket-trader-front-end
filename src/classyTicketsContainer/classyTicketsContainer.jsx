@@ -20,7 +20,7 @@ class ClassyTicketsContainer extends React.Component {
                 venue: "",
                 event_date: "",
                 price: null,
-                // img: ""
+                img: ""
             }
         }
     }
@@ -77,7 +77,7 @@ class ClassyTicketsContainer extends React.Component {
             }
         })
     }
-    updateTicket = async (idToUpdate) => {
+    updateTicketFunction = async (idToUpdate, e) => {
         const apiResponse = await fetch(`https://ancient-woodland-14399.herokuapp.com/api/tickets/${idToUpdate}`, {
             method: "PUT",
             body: JSON.stringify(this.state.updateTicket),
@@ -106,7 +106,8 @@ class ClassyTicketsContainer extends React.Component {
                 ></NewTicketComp>
                 {this.state.tickets.map((ticket)=>{
                     return <SingleTicketComp
-                    updateTicket={this.updateTicket}
+                    updateTicketFunction={this.updateTicketFunction}
+                    updateTicket={this.state.updateTicket}
                     deleteTicket={this.deleteTicket}
                     ticket={ticket} 
                     handleUpdateTicketInputChange={this.handleUpdateTicketInputChange}
