@@ -1,6 +1,7 @@
 import { useState } from "react"
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
+import './newTicketComp.css'
 // import { VscClose } from "react-icons/vsc";
 
 // import CloseButton from 'react-bootstrap/CloseButton'
@@ -21,29 +22,30 @@ const NewTicketComp = (props) => {
         Post New Ticket!
         </Button>
 
-        <Modal 
+        <Modal className="modal"
         show={show}
         onHide={() => setShow(false)}
         dialogClassName="modal-90w"
         aria-labelledby="example-custom-modal-styling-title">
-            <Modal.Header>
+           
+            <Modal.Body className="modal-body">
                 <button onClick={()=>setShow(false)}>Close</button>     
                 <Modal.Title id="example-custom-modal-styling-title">New Ticket</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-                <form onSubmit={props.createNewTicket}>
-                    Name: <input onChange={props.handleNewTicketInputChange} type="text" name="name"/>
-                    <br />
-                    Venue: <input onChange={props.handleNewTicketInputChange} type="text" name="venue"/>
-                    <br />
-                    Date:   <input onChange={props.handleNewTicketInputChange} type="date" name="event_date"/>
-                    <br />
-                    Price: $<input onChange={props.handleNewTicketInputChange} type="number" name="price"/>
-                    <br />
-                    {/* Image: <input onChange={props.handleNewTicketInputChange} type="text" name="img" /> */}
-                    <br />
-                    <button type="submit">Submit</button>
-                </form>
+                <div className="new-ticket-form">
+                    <form onSubmit={props.createNewTicket}>
+                        Name: <input onChange={props.handleNewTicketInputChange} type="text" name="name"/>
+                        <br />
+                        Venue: <input onChange={props.handleNewTicketInputChange} type="text" name="venue"/>
+                        <br />
+                        Date:   <input onChange={props.handleNewTicketInputChange} type="date" name="event_date"/>
+                        <br />
+                        Price: $<input onChange={props.handleNewTicketInputChange} type="number" name="price"/>
+                        <br />
+                        {/* Image: <input onChange={props.handleNewTicketInputChange} type="text" name="img" /> */}
+                        <br />
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
             </Modal.Body>
             <Modal.Footer>
             

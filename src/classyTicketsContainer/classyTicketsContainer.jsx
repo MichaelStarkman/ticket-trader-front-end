@@ -1,6 +1,8 @@
 import React from "react";
 import SingleTicketComp from "./singleTicketComp/singleTicketComp";
 import NewTicketComp from "./newTicketComp/newTicketComp";
+
+
 // import apiUrl from "../apiConfig";
 
 class ClassyTicketsContainer extends React.Component {
@@ -98,8 +100,7 @@ class ClassyTicketsContainer extends React.Component {
     }
     render () {
         return(
-            <div>
-                <h2>Tickets Container</h2>
+            <div className="ticket-container">
                 <NewTicketComp
                 createNewTicket={this.createNewTicket}
                 handleNewTicketInputChange={this.handleNewTicketInputChange}

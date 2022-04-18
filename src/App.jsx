@@ -5,7 +5,7 @@ import ClassyTicketsContainer from './classyTicketsContainer/classyTicketsContai
 function App() {
   return (
     <div className="App">
-      <h1>Tickets go here!</h1>
+      <h1 className='webpage-title'>Ticket Trader</h1>
       {/* <TicketsContainer></TicketsContainer> */}
       <ClassyTicketsContainer></ClassyTicketsContainer>
     </div>

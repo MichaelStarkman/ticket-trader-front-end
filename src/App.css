@@ -1,7 +1,21 @@
 .App {
   text-align: center;
+  overflow-y: scroll;
 }
+html {
+  background-image: url(https://i.imgur.com/XsDOjgb.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 
+}
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+.webpage-title{
+  color: antiquewhite;
+  font-size: 8vw;
+  font-family: 'Righteous', cursive;
+  margin: 2vw;
+
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
