@@ -22,7 +22,7 @@ class ClassyTicketsContainer extends React.Component {
                 venue: "",
                 event_date: "",
                 price: null,
-                img: ""
+                // img: ""
             }
         }
     }

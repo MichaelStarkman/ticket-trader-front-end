@@ -16,7 +16,8 @@ const UpdateTicketComp = (props) => {
     
     return (
         <>
-         <Button variant="primary" onClick={() => setShow(true)}>
+         <Button 
+         variant="primary" onClick={() => setShow(true)}>
         Edit Ticket
         </Button>
         <Modal 
