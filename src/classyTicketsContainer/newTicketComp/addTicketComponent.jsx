@@ -12,12 +12,12 @@ const AddTicketComponent = () => {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        Launch demo modal
+        Post ticket
       </Button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-            <Modal.Title>New Ticket</Modal.Title>
+            <Modal.Title>Add your ticket</Modal.Title>
         </Modal.Header>
         <Modal.Body>
             Need to add form Here!

@@ -1,11 +1,17 @@
-repository for ticket trader react frontend
+Ticket Trader 
 
-Ticket Trader app
+Ticket Trader allows users to post available tickets to sel or trade for local sports, music, and comedy events. Ticket Trader is composed of a Django backend and React front end. Users are able to create, read, update, and delete posts. Some challenges I faced was incorporating class based and functional components. I plan on refactoring the entire application to use functional components to improve to overall functionality of the application. 
+
+I also want to add a comments model to allow other users to respond to ticket posts with alternative offers or commmitals. I will also add some react bootstrap modals to improve the appearance of the application as well. 
+
+TO DO: Make flow chart showing how to us application
 
 
 Hosted App Link
--back end link: https://ancient-woodland-14399.herokuapp.com/api/tickets/
--front end link: https://ticket-trader.herokuapp.com/
+-back end link:
+ https://ancient-woodland-14399.herokuapp.com/api/tickets/
+-front end link:
+ https://ticket-trader.herokuapp.com/
 
 Technology Used
     - HTML, CSS, React
@@ -26,17 +32,7 @@ FUTURE FEATURES
     Images
     Comment option on tickets
 
-General Assembly Project Requirements
-Django Backend: Serve a JSON API with all CRUD operations available across your models. The Django API must be deployed online via Heroku.
-Your API must have at least one model.
-React frontend: Serve a React frontend that consumes (a.k.a relies on fetch requests to) your Django API. You should be able to perform all CRUD operations through the React app and have them execute in and persist in the Django database. The React frontend must be deployed online, separately from your API, via Heroku.
-Two git repositories hosted on Github, with a link to the relevant live sites, and frequent commits dating back to the very beginning of the project. Commit early, commit often!
-At least one Github commit per day.
-A README.md file with explanations of the technologies used, the approach taken, unsolved problems, user stories, and notes to yourself so you can come back to your project later in the course and be able to pick up your train of thought, etc
-Have links to your hosted and working apps in the README.md files in your GitHub repos.
-
-
-
-Notes to self:
+To DO:
     Set DateField to accept today and future dates
+    Comments or Trade proposal section
 
